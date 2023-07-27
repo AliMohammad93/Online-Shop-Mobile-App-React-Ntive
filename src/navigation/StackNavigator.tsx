@@ -2,7 +2,7 @@ import * as React from 'react';
 import {createStackNavigator } from '@react-navigation/stack';
 import Product from '../screens/products/SingleProduct/Product';
 import MaterialTopTabs from './MaterialTopTabs/MaterialTopTabs';
-import CustomHeader from './MaterialTopTabs/CustomHeader';
+import CustomHeader from './MaterialTopTabs/CustomHeader/CustomHeader';
 import { StackNavigatorParamList } from "./types";
 const Stack = createStackNavigator<StackNavigatorParamList>();
 const StackNavigator = () => {

@@ -1,82 +1,57 @@
-import { horizontalScale, verticalScale, moderateScale } from './scaling';
-
-type Colors = {
-  primary: string;
-  secondary: string;
-  success: string;
-  danger: string;
-  warning: string;
-  info: string;
-  light: string;
-  dark: string;
-  muted: string;
-  white: string;
-  black: string;
-};
-
-type Spacing = {
-  xs: number;
-  sm: number;
-  md: number;
-  lg: number;
-  xl: number;
-};
-
-type Typography = {
-  h1: { fontSize: number; fontWeight: 'bold' };
-  h2: { fontSize: number; fontWeight: 'bold' };
-  h3: { fontSize: number; fontWeight: 'bold' };
-  body: { fontSize: number };
-  caption: { fontSize: number };
-};
-
-export type Theme = {
-  colors: Colors;
-  spacing: Spacing;
-  typography: Typography;
-};
-
+import { horizontalScale, verticalScale, moderateScale } from "./metrics";
+import { Theme } from "./types";
 const theme: Theme = {
   colors: {
-    primary: '#007BFF',
-    secondary: '#6C757D',
-    success: '#28A745',
-    danger: '#DC3545',
-    warning: '#FFC107',
-    info: '#17A2B8',
-    light: '#F8F9FA',
-    dark: '#343A40',
-    muted: '#6C757D',
-    white: '#FFF',
-    black: '#000',
+    primary: "#417dd3",
+    secondary: "#333333",
+    background: "#cccccc",
+    white: "#FFFFFF"
   },
-  spacing: {
+  spaceX: {
     xs: horizontalScale(4),
     sm: horizontalScale(8),
     md: horizontalScale(16),
     lg: horizontalScale(24),
-    xl: horizontalScale(40),
+    xl: horizontalScale(40)
   },
+  spaceY: {
+    xs: verticalScale(4),
+    sm: verticalScale(8),
+    md: verticalScale(16),
+    lg: verticalScale(24),
+    xl: verticalScale(40)
+  },
+
   typography: {
     h1: {
       fontSize: moderateScale(32),
-      fontWeight: 'bold',
+      fontWeight: "bold",
+      fontFamily:'MavenPro'
     },
     h2: {
       fontSize: moderateScale(24),
-      fontWeight: 'bold',
+      fontWeight: "bold",
+      fontFamily:'MavenPro'
     },
     h3: {
       fontSize: moderateScale(18),
-      fontWeight: 'bold',
+      fontWeight: "bold",
+      fontFamily:'MavenPro'
     },
     body: {
       fontSize: moderateScale(14),
+      fontFamily:'MavenPro'
     },
     caption: {
       fontSize: moderateScale(12),
-    },
+      fontFamily:'MavenPro'
+    }
   },
+  scaling: {
+    horizontalScale,
+    verticalScale,
+    moderateScale
+  }
 };
 
 export default theme;
