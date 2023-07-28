@@ -1,16 +1,7 @@
-import React from "react";
-import { Text, View } from "react-native";
-import { IProduct } from "../../../types/productTypes";
-import { withProductsFetching } from "../../../hoc/withProductsFetching";
-const WomenClothing = ({ products }: { products: IProduct[], searchTerm: string }) => {
-  return (
-    <View>
-      <Text>Women Clothing</Text>
-
-      {products?.map(product => (
-        <Text key={product.id}>{product.title}</Text>
-      ))}
-    </View>
-  );
+import React, { FC } from "react";
+import { withProductsFetching } from "../../../hoc/withProductsFetching/withProductsFetching";
+import { IProductsScreenProps } from "../../../types/productTypes";
+const WomenClothing: FC<IProductsScreenProps> = ({ children }) => {
+  return <>{children}</>;
 };
-export default withProductsFetching(WomenClothing, "women's%20clothing");
+export default withProductsFetching(WomenClothing, "category/women's%20clothing");

@@ -1,4 +1,6 @@
+import { ReactNode } from "react";
 export interface IProduct {
+
   id:number,
   title:string,
   price:number,
@@ -14,7 +16,8 @@ export interface IProduct {
 export interface IProductsScreenProps {
   products : IProduct[],
   refreshing : boolean,
- getProducts: () => {}
+  getProducts: () => {},
+  children: ReactNode;
 }
 
 

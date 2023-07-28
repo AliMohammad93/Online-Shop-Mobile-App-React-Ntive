@@ -2,7 +2,8 @@ type Colors = {
   primary: string;
   secondary: string;
   background: string,
-  white: string
+  white: string,
+  red:string
 };
 
 type Spacing = {

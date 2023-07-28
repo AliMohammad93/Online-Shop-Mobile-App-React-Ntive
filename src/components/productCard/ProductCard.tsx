@@ -1,9 +1,8 @@
 import { TouchableOpacity, Image, Text, View } from "react-native";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import FavouriteButton from "../favouriteButton/FavouriteButton";
 import styles from "./ProductCard.styles";
 import { IProductCardProps } from "./types";
-
 const ProductCard: FC<IProductCardProps> = ({ product, navigation }) =>
   (<TouchableOpacity style={styles.container} onPress={() => navigation.navigate("Product", { id: product.id })}>
       <FavouriteButton/>
@@ -18,6 +17,4 @@ const ProductCard: FC<IProductCardProps> = ({ product, navigation }) =>
       </View>
     </TouchableOpacity>
   );
-
-
 export default ProductCard;

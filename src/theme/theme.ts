@@ -2,10 +2,11 @@ import { horizontalScale, verticalScale, moderateScale } from "./metrics";
 import { Theme } from "./types";
 const theme: Theme = {
   colors: {
-    primary: "#417dd3",
+    primary: "#4682d8",
     secondary: "#333333",
-    background: "#cccccc",
-    white: "#FFFFFF"
+    background: "#eeeeee",
+    white: "#FFFFFF",
+    red:'#fc575b'
   },
   spaceX: {
     xs: horizontalScale(4),
