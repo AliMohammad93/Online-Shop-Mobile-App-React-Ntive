@@ -1,14 +1,15 @@
 import React, { useContext, useCallback, useState , FC } from "react";
-import { Text, FlatList, RefreshControl , Dimensions} from "react-native";
+import { Text, FlatList, RefreshControl } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 import Indicator from "../../components/indicator/Indicator";
 import ProductCard from "../../components/productCard/ProductCard";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage";
+import NoResults from "../../components/noResults/NoResults";
 import { getProducts } from "../../utilities/getProducts";
 import { IProduct } from "../../types/productTypes";
 import {IRenderItemProps} from "./types";
 import { SearchContext } from "../../context/SearchContext";
 import styles from "./withProductsFetching.styles";
-const windowWidth = Dimensions.get('window').width;
 
 export const withProductsFetching = (WrappedComponent: React.ComponentType<any>, category: string = '') => {
   return (props: any) => {
@@ -35,9 +36,9 @@ export const withProductsFetching = (WrappedComponent: React.ComponentType<any>,
     const renderItem : FC <IRenderItemProps> = ({ item }) => (
       <ProductCard product={item} navigation={props.navigation} />
     );
-    if (error) return <Text>Something went wrong </Text>;
+    if (error) return <ErrorMessage/>;
     if (loading) return <Indicator />;
-    if (products.length === 0) return <Text>No result</Text>;
+    if (products.length === 0) return <NoResults/>;
     return (
       <WrappedComponent {...props}>
         <FlatList
