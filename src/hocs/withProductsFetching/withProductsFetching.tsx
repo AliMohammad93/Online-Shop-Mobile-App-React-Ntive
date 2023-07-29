@@ -17,20 +17,25 @@ export const withProductsFetching = (
 ) => {
   return (props: any) => {
     const {searchTerm} = useContext(SearchContext);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<boolean>(false);
     const [products, setProducts] = useState<IProduct[]>([]);
-    const [refreshing, setRefreshing] = useState(true);
+    const [refreshing, setRefreshing] = useState<boolean>(true);
     useFocusEffect(
       useCallback(() => {
-        getProductsHandler();
+        let isActive = true;
+        if (isActive) {
+          getProductsHandler();
+        }
+        return () => {
+          // clean up
+          isActive = false;
+        };
       }, [searchTerm]),
     );
     const getProductsHandler = () => {
-      setLoading(true);
       getProducts(category, searchTerm)
         .then(res => {
-          console.log(res);
           setProducts(res);
         })
         .catch(() => {
@@ -44,11 +49,11 @@ export const withProductsFetching = (
     const renderItem: FC<IRenderItemProps> = ({item}) => (
       <ProductCard product={item} navigation={props.navigation} />
     );
-    if (error) {
-      return <ErrorMessage />;
-    }
     if (loading) {
       return <Indicator />;
+    }
+    if (error) {
+      return <ErrorMessage />;
     }
     if (products.length === 0) {
       return <NoResults />;
