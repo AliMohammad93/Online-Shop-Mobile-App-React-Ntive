@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
-import { View, TextInput , Text} from 'react-native';
-import { styles } from "./CustomHeader.styles";
-import {SearchContext} from "../../../context/SearchContext";
+import React, {useContext} from 'react';
+import {View, TextInput, Text} from 'react-native';
+import {styles} from './CustomHeader.styles';
+import {SearchContext} from '../../../context/searchContext/SearchContext';
 const CustomHeader = () => {
-  const {setSearchTerm } = useContext(SearchContext);
+  const {setSearchTerm} = useContext(SearchContext);
   return (
     <View style={styles.container}>
       <Text style={styles.greeting}>Welcome to</Text>
-      <Text style={styles.title}>Shop Name</Text>
+      <Text style={styles.title}>Clark Task</Text>
       <TextInput
         style={styles.searchBox}
         placeholder="Search..."
@@ -16,7 +16,5 @@ const CustomHeader = () => {
     </View>
   );
 };
-
-
 
 export default CustomHeader;

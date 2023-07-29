@@ -1,24 +1,25 @@
-import { StyleSheet } from "react-native";
-import theme from "../../../theme/theme";
+import {StyleSheet} from 'react-native';
+import theme from '../../../theme/theme';
 
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    backgroundColor: theme.colors.white
+    backgroundColor: theme.colors.white,
   },
   imageContainer: {
     flex: 1,
     backgroundColor: theme.colors.white,
-    justifyContent: "center"
+    justifyContent: 'center',
   },
   image: {
-    width: "100%",
-    height: theme.scaling.verticalScale(250)
+    width: '100%',
+    height: theme.scaling.verticalScale(250),
   },
   title: {
     marginBottom: theme.spaceY.md,
     ...theme.typography.body,
-    fontWeight: "bold"
+    fontWeight: 'bold',
+    color: theme.colors.secondary,
   },
   scrollView: {
     flex: 1,
@@ -27,44 +28,45 @@ const styles = StyleSheet.create({
     borderRadius: theme.scaling.moderateScale(20),
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
-    overflow: "hidden"
+    overflow: 'hidden',
   },
   descriptionContainer: {
     backgroundColor: theme.colors.background,
     borderTopStartRadius: theme.scaling.moderateScale(20),
     borderTopEndRadius: theme.scaling.moderateScale(20),
     paddingHorizontal: theme.spaceX.lg,
-    paddingVertical: theme.spaceY.lg
+    paddingVertical: theme.spaceY.lg,
   },
   priceContainer: {
-    alignSelf: "flex-end",
+    alignSelf: 'flex-end',
     backgroundColor: theme.colors.primary,
     width: theme.scaling.horizontalScale(75),
     paddingHorizontal: theme.scaling.horizontalScale(5),
     paddingVertical: theme.scaling.verticalScale(10),
-    alignItems: "center",
+    alignItems: 'center',
     marginRight: theme.scaling.horizontalScale(-24),
     borderTopLeftRadius: theme.scaling.moderateScale(19),
-    borderBottomLeftRadius: theme.scaling.moderateScale(19)
+    borderBottomLeftRadius: theme.scaling.moderateScale(19),
   },
   price: {
     color: theme.colors.white,
     ...theme.typography.body,
-    fontWeight: "bold"
+    fontWeight: 'bold',
   },
   descriptionTitle: {
     ...theme.typography.body,
     marginBottom: theme.spaceY.sm,
-    fontWeight: "bold"
+    fontWeight: 'bold',
+    color: theme.colors.secondary,
   },
   description: {
-    ...theme.typography.body
-
+    ...theme.typography.body,
+    color: theme.colors.secondary,
   },
   buttonContainer: {
     marginTop: theme.spaceY.lg,
-    alignItems: "center"
-  }
+    alignItems: 'center',
+  },
 });
 
-export default styles
+export default styles;

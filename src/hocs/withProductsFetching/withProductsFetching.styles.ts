@@ -1,8 +1,8 @@
-import { StyleSheet } from "react-native";
-import theme from "../../theme/theme";
+import {StyleSheet} from 'react-native';
+import theme from '../../theme/theme';
 const styles = StyleSheet.create({
-  container : {
-    marginTop:theme.spaceY.md
+  container: {
+    marginTop: theme.spaceY.md,
   },
   columnWrapperStyle: {
     flex: 1,

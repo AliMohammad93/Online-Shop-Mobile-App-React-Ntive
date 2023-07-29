@@ -1,4 +1,4 @@
-export interface ICustomButton{
-  title:string,
+export interface ICustomButton {
+  title: string;
   onPress: () => void;
 }

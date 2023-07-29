@@ -1,10 +1,12 @@
-import type { RouteProp } from '@react-navigation/native';
+import type {RouteProp} from '@react-navigation/native';
 export type StackNavigatorParamList = {
   Home: undefined;
   Product: {
-    id: number
+    id: number;
   };
 };
 
-export type ProductScreenRouteProp = RouteProp<StackNavigatorParamList, 'Product'>;
-
+export type ProductScreenRouteProp = RouteProp<
+  StackNavigatorParamList,
+  'Product'
+>;

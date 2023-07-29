@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
-import { IProduct } from "../types/productTypes";
+import {useEffect, useState} from 'react';
+import {IProduct} from '../types/productTypes';
 
-export const useGetProduct = (id: number): [IProduct | undefined, boolean, any] => {
+export const useGetProduct = (
+  id: number,
+): [IProduct | undefined, boolean, any] => {
   const [data, setData] = useState<IProduct | undefined>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<any>(null);

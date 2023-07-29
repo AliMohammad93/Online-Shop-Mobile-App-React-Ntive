@@ -1,23 +1,13 @@
-import { ReactNode } from "react";
+import {ReactNode} from 'react';
 export interface IProduct {
-
-  id:number,
-  title:string,
-  price:number,
-  description:string,
-  category:string,
-  image:string,
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
   rating: {
     rate: number;
     count: number;
   };
 }
-
-export interface IProductsScreenProps {
-  products : IProduct[],
-  refreshing : boolean,
-  getProducts: () => {},
-  children: ReactNode;
-}
-
-
