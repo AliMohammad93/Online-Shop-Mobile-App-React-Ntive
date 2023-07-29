@@ -23,14 +23,7 @@ export const withProductsFetching = (
     const [refreshing, setRefreshing] = useState<boolean>(true);
     useFocusEffect(
       useCallback(() => {
-        let isActive = true;
-        if (isActive) {
-          getProductsHandler();
-        }
-        return () => {
-          // clean up
-          isActive = false;
-        };
+        getProductsHandler();
       }, [searchTerm]),
     );
     const getProductsHandler = () => {
