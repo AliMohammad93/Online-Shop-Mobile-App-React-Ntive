@@ -4,6 +4,13 @@ import {styles} from './CustomHeader.styles';
 import {SearchContext} from '../../../context/searchContext/SearchContext';
 const CustomHeader = () => {
   const {setSearchTerm} = useContext(SearchContext);
+  const handleSearchChange = (text: string) => {
+    if (text.trim().length > 2) {
+      setSearchTerm(text);
+    } else {
+      setSearchTerm('');
+    }
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.greeting}>Welcome to</Text>
@@ -11,7 +18,7 @@ const CustomHeader = () => {
       <TextInput
         style={styles.searchBox}
         placeholder="Search..."
-        onChangeText={text => setSearchTerm(text)}
+        onChangeText={text => handleSearchChange(text)}
       />
     </View>
   );

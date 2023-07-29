@@ -10,6 +10,7 @@ import {IProduct} from '../../types/productTypes';
 import {IRenderItemProps} from './types';
 import styles from './withProductsFetching.styles';
 import {SearchContext} from '../../context/searchContext/SearchContext';
+
 export const withProductsFetching = (
   WrappedComponent: React.ComponentType<any>,
   category: string = '',
@@ -26,8 +27,10 @@ export const withProductsFetching = (
       }, [searchTerm]),
     );
     const getProductsHandler = () => {
+      setLoading(true);
       getProducts(category, searchTerm)
         .then(res => {
+          console.log(res);
           setProducts(res);
         })
         .catch(() => {
