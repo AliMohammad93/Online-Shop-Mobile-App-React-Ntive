@@ -13,8 +13,7 @@ const CustomHeader = () => {
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.greeting}>Welcome to</Text>
-      <Text style={styles.title}>Online Store</Text>
+      <Text style={styles.greeting}>Welcome</Text>
       <TextInput
         style={styles.searchBox}
         placeholder="Search..."
