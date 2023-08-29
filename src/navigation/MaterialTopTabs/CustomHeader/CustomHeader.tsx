@@ -14,7 +14,7 @@ const CustomHeader = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.greeting}>Welcome to</Text>
-      <Text style={styles.title}>Clark Task</Text>
+      <Text style={styles.title}>Online Store</Text>
       <TextInput
         style={styles.searchBox}
         placeholder="Search..."
